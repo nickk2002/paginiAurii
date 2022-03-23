@@ -4,10 +4,11 @@ Web scraper care cauta pe site-ul [Pagini Aurii](https://www.paginiaurii.ro/caut
 ## Instalare
 1. Download la zip
 2. Extract la zip
-3. Ruleaza din terminal `pip install -r requirements.txt`
-4. Fiind in folder-ul din unzip ruleaza `python main.py`
-5. Introdu numele de cautat
-6. Rezultatul va fi salvat in folder `json/numele_query` deci daca cauti `autogara` informatia va fi salvata in folder-ul `json/autogara.json`
+3. Deschide locatia folder-ului in terminal 
+4. Ruleaza din terminal `pip install -r requirements.txt` (Asta va instala toate librariile `bs4`, `requests` etc)
+5. Fiind in folder-ul din unzip ruleaza `python main.py`. Daca nu merge incearca `python3 main.py`.
+6. Introdu numele de cautat
+7. Rezultatul va fi salvat in folder `json/numele_query` deci daca cauti `autogara` informatia va fi salvata in folder-ul `json/autogara.json`
 
 ## Format
 Pentru fiecare rezultat se extrag urmatoarele informatii:
