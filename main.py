@@ -9,7 +9,8 @@ from bs4 import BeautifulSoup
 # sa modifici query cu ce vrei sa cauti
 # ana+maria de exemplu
 # o sa iti salveze un fisier .json cu numele query-ului
-query = "autogara"
+query = input("Ce vreti sa cautati pe site-ul paginiaurii: ")
+print("Cautam",query)
 url = "http://www.paginiaurii.ro/cauta/" + query
 debug = False  # sa pui True daca vrei sa vezi ce face in timp real
 
@@ -55,7 +56,11 @@ def scrape(url):
 def scrape_all_pages(url):
     response = requests.get(url)
     soup = BeautifulSoup(response.content, features='html.parser')
-    pagination = soup.find("ul", class_="pagination").get_text()
+    try:
+        pagination = soup.find("ul", class_="pagination").get_text()
+    except AttributeError:
+        print("Nu exista rezultate pentru cautarea dumneavoastra",url)
+        return
     try:
         number_results_per_page = int(re.findall("(\d+)/", pagination)[0])
     except Exception:
